@@ -1,5 +1,5 @@
-import User from '../models/user'
-import { normalizeId, dbConnect } from './util'
+import User from './models/user'
+import dbConnect from './connection'
 
 export async function create(username, password) {
   if (!(username && password))
@@ -12,5 +12,5 @@ export async function create(username, password) {
   if (!user)
     throw new Error('Error inserting User')
 
-  return normalizeId(user)
+  return user.toJSON()
 }
