@@ -38,12 +38,10 @@ export default function Dashboard(props) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to a <a href="https://nextjs.org">Next.js!</a> Dashboard Page!
+          Hi there, I am Ditto, your personal wedding assistant!
         </h1>
 
         <p className={styles.description}>
-          Current Location: <code className={styles.code}>{router.asPath}</code>
-          <br />
           Status:{" "}
           <code className={styles.code}>
             {!props.isLoggedIn && " Not"} Logged In
@@ -59,13 +57,19 @@ export default function Dashboard(props) {
             <h2>Home &rarr;</h2>
             <p>Return to the homepage.</p>
           </Link>
+
+          <Link href="/notes" className={styles.card}>
+                <h2> Wedding Notes &rarr;</h2>
+                <p> Access your planning notes.</p>
+          </Link>
+
           <div
             onClick={logout}
             style={{ cursor: "pointer" }}
             className={styles.card}
           >
             <h2>Logout &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
+            <p>See you later, good job today!</p>
           </div>
         </div>
       </main>
