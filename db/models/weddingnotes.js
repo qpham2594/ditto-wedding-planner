@@ -1,7 +1,12 @@
-import { Schema } from "mongoose";
+import { Schema, model, models } from 'mongoose'
 
 const WeddingNotes = new Schema({
-    budget:String,
+    userId: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    budget: String,
     guests: String,
     venue: String,
     theme: String,
@@ -20,6 +25,6 @@ const WeddingNotes = new Schema({
     groomsmen: String,
     lodging: String,
     registry: String
-})
+});
 
-export default WeddingNotes
+export default models.WeddingNotes || model('WeddingNotes', WeddingNotes)
