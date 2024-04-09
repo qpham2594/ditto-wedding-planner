@@ -108,6 +108,8 @@ const WeddingNotesPage = (props) => {
       setGroomsmen('');
       setLodging('');
       setRegistry('');
+
+      alert('Wedding note has been created!');
     } catch (error) {
       console.error('Error creating wedding note:', error);
     }
