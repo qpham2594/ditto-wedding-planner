@@ -62,11 +62,11 @@ export default function Login(props) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Hi, it's me, Ditto! Let's have you log in!
+          Hi, it's me, Ditto! <br/>
+          Let's have you log in!
         </h1>
 
         <p className={styles.description}>
-          Current Location: <code className={styles.code}>{router.asPath}</code>
           <br />
           Status:{" "}
           <code className={styles.code}>

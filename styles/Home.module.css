@@ -67,9 +67,10 @@
 
 .grid {
   display: flex;
-  justify-content: center;
+  justify-content:left;
   flex-wrap: wrap;
-  max-width: 18rem;
+  margin: 10px;
+  gap: 20px;
 }
 
 .card {
@@ -122,6 +123,13 @@
 .logo {
   height: 1em;
   margin-left: 0.5rem;
+}
+
+.hero{
+  background-image: url(../public/flowers.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 10%;
 }
 
 @media (max-width: 600px) {

@@ -38,49 +38,54 @@ export default function Home(props) {
       <Header isLoggedIn={props.isLoggedIn} username={props?.user?.username} />
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to Ditto!
-        </h1>
+      <div className={styles.hero}>
 
-        <p className={styles.description}>
-          Current Location: Homepage
-          <br />
-          Status:{" "}
+      <div class="jumbotron">
+        <h1 class="display-4">Welcome to Ditto!</h1>
+        <p class="lead">
+        Status:{" "}
           <code className={styles.code}>
             {!props.isLoggedIn && " Not"} Logged In
           </code>
         </p>
-
+        <hr class="my-4"/>
+        <p>Hi there, I am your personal assistant to help you plan your wedding! You can create your wedding plan, and modify it whenever you have to.
+          <br/> You can check on the weather of the wedding venue as well, so you can be well prepared. Either way, it will be fun and I am here so you can have an easy experience!
+        </p>
         <div className={styles.grid}>
           {props.isLoggedIn ? (
             <>
-              <Link href="/dashboard" className={styles.card}>
-                <h2>Dashboard &rarr;</h2>
-                <p>This page is only visible if you are logged in.</p>
+              <Link href="/dashboard" class="btn btn-warning btn-lg">
+                <h5>Dashboard &rarr;</h5>
               </Link>
               <div
                 onClick={logout}
                 style={{ cursor: "pointer" }}
-                className={styles.card}
+                class="btn btn-danger btn-lg"
               >
-                <h2>Logout &rarr;</h2>
-                <p>Click here to log out.</p>
+                <h5>Logout &rarr;</h5>
               </div>
             </>
           ) : (
             <>
-              <Link href="/login" className={styles.card}>
-                <h2>Login &rarr;</h2>
-                <p>Visit the login page.</p>
+              <Link href="/login" class="btn btn-warning btn-lg">
+                <h5> Login &rarr;</h5>
               </Link>
 
-              <Link href="/signup" className={styles.card}>
-                <h2>Create Account &rarr;</h2>
-                <p>Create an account.</p>
+              <Link href="/signup" class="btn btn-warning btn-lg">
+                <h5> Sign Up &rarr;</h5>
               </Link>
             </>
           )}
         </div>
+      </div>
+
+      </div>
+
+
+        
+
+
       </main>
 
       <footer className={styles.footer}>
