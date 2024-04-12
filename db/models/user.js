@@ -1,6 +1,5 @@
 import { Schema, model, models } from 'mongoose'
 import bcrypt from 'bcrypt'
-import WeddingNotes from './weddingnotes'
 
 const UserSchema = new Schema({
   username: {
@@ -14,7 +13,10 @@ const UserSchema = new Schema({
     minLength: 5,
     maxLength: 200
   },
-  notes: [WeddingNotes]
+  notes: {
+  type: Schema.Types.ObjectId,
+  ref: 'WeddingNotes' 
+  }
 })
 
 // hashes the password before it's stored in mongo

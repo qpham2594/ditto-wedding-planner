@@ -57,12 +57,6 @@ export default function Dashboard(props) {
             <h2>Home &rarr;</h2>
             <p>Return to the homepage.</p>
           </Link>
-
-          <Link href="/notes" className={styles.card}>
-                <h2> Wedding Notes &rarr;</h2>
-                <p> Access your planning notes.</p>
-          </Link>
-
           <div
             onClick={logout}
             style={{ cursor: "pointer" }}

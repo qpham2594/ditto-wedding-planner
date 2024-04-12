@@ -8,6 +8,7 @@ import styles from "../styles/Home.module.css";
 import Header from "../components/header";
 import useLogout from "../hooks/useLogout";
 
+
 export const getServerSideProps = withIronSessionSsr(
   async function getServerSideProps({ req }) {
     const user = req.session.user;

@@ -62,7 +62,7 @@ export default function Login(props) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to the <a href="https://nextjs.org">Next.js</a> Login Page!
+          Hi, it's me, Ditto! Let's have you log in!
         </h1>
 
         <p className={styles.description}>

@@ -26,6 +26,7 @@ export const getServerSideProps = withIronSessionSsr(
 const WeddingNotesPage = (props) => {
   const router = useRouter();
   const logout = useLogout();
+  const [hasNote, setHasNote] = useState(false)
 
   // useState variables for wedding note fields
   const [userId, setUserId] = useState('');
@@ -53,8 +54,9 @@ const WeddingNotesPage = (props) => {
   // Fetch data from the backend API
   const fetchWeddingNotes = async () => {
     try {
-      const response = await axios.get(`/api/weddingnotes?userId=${userId}`);
-      setWeddingNotes(response.data);
+      const response = await axios.get(`/api/weddingnotes?userId=${props.user._id}`);
+      if (response.data.length > 0) 
+        setHasNote(true);
     } catch (error) {
       console.error('Error fetching wedding notes:', error);
     }
@@ -110,18 +112,10 @@ const WeddingNotesPage = (props) => {
       setRegistry('');
 
       alert('Wedding note has been created!');
-    } catch (error) {
-      console.error('Error creating wedding note:', error);
-    }
-  };
 
-  // Updating a wedding note function
-  const handleUpdateWeddingNote = async (id) => {
-    const { user } = props; // Destructure the user object from props
-    const { _id: userId } = user; // Extract the userID from the user object because we need userId for CRUD
-    try {
-      await axios.put(`/api/weddingnotes?id=${id}`, 
-      {
+      router.push({
+        pathname: '/weddingplan',
+        query: { created: true,
         userId,
         budget,
         guests,
@@ -141,20 +135,11 @@ const WeddingNotesPage = (props) => {
         bridesmaids,
         groomsmen,
         lodging,
-        registry});
-      await fetchWeddingNotes();
+        registry
+        }
+      })
     } catch (error) {
-      console.error('Error updating wedding note:', error);
-    }
-  };
-
-  // Deleting a wedding note function
-  const handleDeleteWeddingNote = async (id) => {
-    try {
-      await axios.delete(`/api/weddingnotes?id=${id}`);
-      await fetchWeddingNotes();
-    } catch (error) {
-      console.error('Error deleting wedding note:', error);
+      console.error('Error creating wedding note:', error);
     }
   };
 
