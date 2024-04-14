@@ -49,7 +49,7 @@ export default function Home(props) {
           </code>
         </p>
         <hr class="my-4"/>
-        <p>Hi there, I am your personal assistant to help you plan your wedding! You can create your wedding plan, and modify it whenever you have to.
+        <p className={styles.text}>Hi there, I am your personal assistant to help you plan your wedding! You can create your wedding plan, and modify it whenever you have to.
           <br/> You can check on the weather of the wedding venue as well, so you can be well prepared. Either way, it will be fun and I am here so you can have an easy experience!
         </p>
         <div className={styles.grid}>
