@@ -204,7 +204,7 @@
 }
 
 .notesbackground {
-  background-color: blue;
+  background-color: rgb(37, 37, 46);
   background-image: url(../public/notesbg.jpg);
   background-size: cover;
   background-position: center;
