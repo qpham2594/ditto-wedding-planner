@@ -24,7 +24,9 @@ const WeddingNotes = new Schema({
     bridesmaids: String,
     groomsmen: String,
     lodging: String,
-    registry: String
+    registry: String,
+    photographer: String,
+    music: String
 });
 
 export default models.WeddingNotes || model('WeddingNotes', WeddingNotes)

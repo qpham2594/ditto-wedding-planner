@@ -10,8 +10,6 @@ export default function Header(props) {
         <>
           <p>
             <Link href="/">Home</Link>
-            <Link href="/notes"> Wedding Notes </Link>
-            <Link href="/weddingplan"> Current Plan </Link>
           </p>
           <div className={styles.container}>
             <p>Welcome, {props.username}!</p>

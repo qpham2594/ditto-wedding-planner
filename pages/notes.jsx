@@ -49,6 +49,8 @@ const WeddingNotesPage = (props) => {
   const [groomsmen, setGroomsmen] = useState('');
   const [lodging, setLodging] = useState('');
   const [registry, setRegistry] = useState('');
+  const [music, setMusic] = useState('');
+  const [photographer, setPhotographer] = useState('');
   const [weddingNotes, setWeddingNotes] = useState([]);
 
   // Fetch data from the backend API
@@ -89,7 +91,9 @@ const WeddingNotesPage = (props) => {
         bridesmaids,
         groomsmen,
         lodging,
-        registry});
+        registry,
+        music,
+        photographer});
       await fetchWeddingNotes();
       setBudget('');
       setGuests('');
@@ -110,6 +114,8 @@ const WeddingNotesPage = (props) => {
       setGroomsmen('');
       setLodging('');
       setRegistry('');
+      setMusic('');
+      setPhotographer ('')
 
       alert('Wedding note has been created!');
 
@@ -135,7 +141,9 @@ const WeddingNotesPage = (props) => {
         bridesmaids,
         groomsmen,
         lodging,
-        registry
+        registry,
+        music,
+        photographer
         }
       })
     } catch (error) {
@@ -157,29 +165,30 @@ const WeddingNotesPage = (props) => {
       <Header isLoggedIn={props.isLoggedIn} username={props.user.username} />
 
       <div>
-        <form onSubmit={handleCreateWeddingNote}>
-            <input type="text" placeholder="Budget" value={budget} onChange={(e) => setBudget(e.target.value)} />
-            <input type="text" placeholder="Guests" value={guests} onChange={(e) => setGuests(e.target.value)} />
-            <input type="text" placeholder="Venue" value={venue} onChange={(e) => setVenue(e.target.value)} />
-            <input type="text" placeholder="Theme" value={theme} onChange={(e) => setTheme(e.target.value)} />
-            <input type="text" placeholder="Caterers" value={caterers} onChange={(e) => setCaterers(e.target.value)} />
-            <input type="text" placeholder="Alcohol" value={alcohol} onChange={(e) => setAlcohol(e.target.value)} />
-            <input type="text" placeholder="Vendors" value={vendors} onChange={(e) => setVendors(e.target.value)} />
-            <input type="text" placeholder="Rentals" value={rentals} onChange={(e) => setRentals(e.target.value)} />
-            <input type="text" placeholder="Dress" value={dress} onChange={(e) => setDress(e.target.value)} />
-            <input type="text" placeholder="Suit" value={suit} onChange={(e) => setSuit(e.target.value)} />
-            <input type="text" placeholder="Florals" value={florals} onChange={(e) => setFlorals(e.target.value)} />
-            <input type="text" placeholder="Transportation" value={transportation} onChange={(e) => setTransportation(e.target.value)} />
-            <input type="text" placeholder="Cake" value={cake} onChange={(e) => setCake(e.target.value)} />
-            <input type="text" placeholder="Invitations" value={invitations} onChange={(e) => setInvitations(e.target.value)} />
-            <input type="text" placeholder="Decor" value={decor} onChange={(e) => setDecor(e.target.value)} />
-            <input type="text" placeholder="Bridesmaids" value={bridesmaids} onChange={(e) => setBridesmaids(e.target.value)} />
-            <input type="text" placeholder="Groomsmen" value={groomsmen} onChange={(e) => setGroomsmen(e.target.value)} />
-            <input type="text" placeholder="Lodging" value={lodging} onChange={(e) => setLodging(e.target.value)} />
-            <input type="text" placeholder="Registry" value={registry} onChange={(e) => setRegistry(e.target.value)} />
-          <button type="submit">Create Wedding Note</button>
+        <form onSubmit={handleCreateWeddingNote} className={styles.planForm}>
+          <textarea placeholder="Budget" value={budget} onChange={(e) => setBudget(e.target.value)} className={styles.formInput}></textarea>
+          <textarea placeholder="Guests" value={guests} onChange={(e) => setGuests(e.target.value)} className={styles.formInput}></textarea>
+          <textarea placeholder="Venue" value={venue} onChange={(e) => setVenue(e.target.value)}  className={styles.formInput}></textarea>
+          <textarea placeholder="Theme" value={theme} onChange={(e) => setTheme(e.target.value)} className={styles.formInput}></textarea>
+          <textarea placeholder="Caterers" value={caterers} onChange={(e) => setCaterers(e.target.value)} className={styles.formInput}></textarea>
+          <textarea placeholder="Alcohol" value={alcohol} onChange={(e) => setAlcohol(e.target.value)} className={styles.formInput}></textarea>
+          <textarea placeholder="Vendors" value={vendors} onChange={(e) => setVendors(e.target.value)} className={styles.formInput}></textarea>
+          <textarea placeholder="Rentals" value={rentals} onChange={(e) => setRentals(e.target.value)} className={styles.formInput}></textarea>
+          <textarea placeholder="Dress" value={dress} onChange={(e) => setDress(e.target.value)} className={styles.formInput}></textarea>
+          <textarea placeholder="Suit" value={suit} onChange={(e) => setSuit(e.target.value)} className={styles.formInput}></textarea>
+          <textarea placeholder="Florals" value={florals} onChange={(e) => setFlorals(e.target.value)} className={styles.formInput}></textarea>
+          <textarea placeholder="Transportation" value={transportation} onChange={(e) => setTransportation(e.target.value)} className={styles.formInput}></textarea>
+          <textarea placeholder="Cake" value={cake} onChange={(e) => setCake(e.target.value)} className={styles.formInput}></textarea>
+          <textarea placeholder="Invitations" value={invitations} onChange={(e) => setInvitations(e.target.value)} className={styles.formInput}></textarea>
+          <textarea placeholder="Decor" value={decor} onChange={(e) => setDecor(e.target.value)} className={styles.formInput}></textarea>
+          <textarea placeholder="Bridesmaids" value={bridesmaids} onChange={(e) => setBridesmaids(e.target.value)} className={styles.formInput}></textarea>
+          <textarea placeholder="Groomsmen" value={groomsmen} onChange={(e) => setGroomsmen(e.target.value)} className={styles.formInput}></textarea>
+          <textarea placeholder="Lodging" value={lodging} onChange={(e) => setLodging(e.target.value)} className={styles.formInput}></textarea>
+          <textarea placeholder="Music" value={music} onChange={(e) => setMusic(e.target.value)} className={styles.formInput}></textarea>
+          <textarea placeholder="Photographer" value={photographer} onChange={(e) => setPhotographer(e.target.value)} className={styles.formInput}></textarea>
+          <textarea placeholder="Registry" value={registry} onChange={(e) => setRegistry(e.target.value)} className={styles.formInput}></textarea>
+          <button type="submit" className={styles.submitButton}>Create Wedding Note</button>
         </form>
-
     <div>
   {weddingNotes.map((note) => (
     <div key={note._id}>
@@ -202,6 +211,8 @@ const WeddingNotesPage = (props) => {
       <p>Bridesmaids: {note.bridesmaids}</p>
       <p>Groomsmen: {note.groomsmen}</p>
       <p>Lodging: {note.lodging}</p>
+      <p>Music: {note.music}</p>
+      <p>Photographer: {note.photographer}</p>
       <p>Registry: {note.registry}</p>
 
       <button onClick={() => handleUpdateWeddingNote(note._id)}>Update</button>
@@ -212,14 +223,16 @@ const WeddingNotesPage = (props) => {
       </div>
 
       <div className={styles.grid}>
-        <Link href="/" className={styles.card}>
-          <h2>Home &rarr;</h2>
-          <p>Return to the homepage.</p>
+        <Link href="/" class="btn btn-warning btn-lg">
+          <h5>Home &rarr;</h5>
         </Link>
 
-        <div onClick={handleLogout} style={{ cursor: "pointer" }} className={styles.card}>
-          <h2>Logout &rarr;</h2>
-          <p>See you later, good job today!</p>
+        <Link href="/weddingplan" class="btn btn-info btn-lg">
+          <h5>Current Plan &rarr;</h5>
+        </Link>
+
+        <div onClick={handleLogout} style={{ cursor: "pointer" }} class="btn btn-danger btn-lg">
+          <h5>Logout &rarr;</h5>
         </div>
       </div>
     </div>

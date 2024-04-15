@@ -47,7 +47,7 @@
 
 .title,
 .description {
-  text-align: center;
+  text-align:left
 }
 
 .description {
@@ -134,7 +134,50 @@
 
 .text {
   color: whitesmoke;
-  font-weight:600;
+  font-weight:500;
+  font-size: 22px
+}
+
+.ditto {
+  width:20%;
+  height: auto;
+  margin-right: 30px;
+  position: fixed;
+  bottom: 0;
+  right: 20%;
+}
+
+.dashboardHero{
+  background-image: url(../public/dashboard2.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.planForm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  margin: 0 5% 8%;
+}
+
+.formInput{
+  flex-basis: calc(33.33% - 20px); /* One-third of the container width minus the margin */
+  height: 150px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 20px; /* Add margin at the bottom of each input */
+}
+
+.formInput:focus {
+  outline: none; /* Remove outline when focused */
+  border-color: dodgerblue; /* Change border color when focused */
+}
+
+.submitButton{
+  flex-basis: 100%; /* Make the button take up full width */
+  margin-top: 20px; /* Add margin above the button */
 }
 
 @media (max-width: 600px) {
