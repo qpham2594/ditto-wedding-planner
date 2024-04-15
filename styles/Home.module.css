@@ -213,7 +213,7 @@
 .planningpage{
   background-image: url(../public/weddingplan2.jpg);
   background-size: cover;
-  background-color: yellow;
+  background-color: rgb(42, 42, 0);
 }
 
 .searchContainer {

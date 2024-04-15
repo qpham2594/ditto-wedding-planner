@@ -169,8 +169,8 @@ const WeddingPlan = (props) => {
               <p className={styles.noteDetails}>Lodging: {note.lodging}</p>
               <hr class="my-2"/>
               <p className={styles.noteDetails}>Registry: {note.registry}</p>
-              <button onClick={() => handleUpdateWeddingNote(note._id)} class="btn btn-success btn-lg">Update</button>
-              <button onClick={() => handleDeleteWeddingNote(note._id)} class="btn btn-info btn-lg">Delete</button>
+              <button onClick={() => handleUpdateWeddingNote(note._id)} class="btn btn-success btn-lg mb-2">Update</button>
+              <button onClick={() => handleDeleteWeddingNote(note._id)} class="btn btn-info btn-lg mt-2">Delete</button>
             </div>
           ))
         )}
