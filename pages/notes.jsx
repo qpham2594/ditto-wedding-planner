@@ -7,6 +7,8 @@ import { withIronSessionSsr } from "iron-session/next";
 import sessionOptions from "../config/session";
 import Header from "../components/header";
 import useLogout from "../hooks/useLogout";
+import Head from 'next/head'
+
 
 export const getServerSideProps = withIronSessionSsr(
   async function getServerSideProps({ req }) {
@@ -30,6 +32,7 @@ const WeddingNotesPage = (props) => {
 
   // useState variables for wedding note fields
   const [userId, setUserId] = useState('');
+  const [date, setDate] = useState('');
   const [budget, setBudget] = useState('');
   const [guests, setGuests] = useState('');
   const [venue, setVenue] = useState('');
@@ -73,6 +76,7 @@ const WeddingNotesPage = (props) => {
     try {
       await axios.post('/api/weddingnotes', {
         userId,
+        date,
         budget,
         guests,
         venue,
@@ -95,6 +99,7 @@ const WeddingNotesPage = (props) => {
         music,
         photographer});
       await fetchWeddingNotes();
+      setDate('');
       setBudget('');
       setGuests('');
       setVenue('');
@@ -123,6 +128,7 @@ const WeddingNotesPage = (props) => {
         pathname: '/weddingplan',
         query: { created: true,
         userId,
+        date,
         budget,
         guests,
         venue,
@@ -161,11 +167,18 @@ const WeddingNotesPage = (props) => {
   };
 
   return (
-    <div>
+    <div className={styles.notesbackground}>
+      <Head>
+        <title> Create your vision!!</title>
+        <meta name="description" content="create your wedding vision and fill out the fields!" />
+        <html lang="en" />
+      </Head>
       <Header isLoggedIn={props.isLoggedIn} username={props.user.username} />
 
       <div>
+        <h1 className={styles.formTitle}>Create Your Wedding Vision</h1>
         <form onSubmit={handleCreateWeddingNote} className={styles.planForm}>
+          <textarea placeholder="Date" value={date} onChange={(e) => setDate(e.target.value)} className={styles.formInput}></textarea>
           <textarea placeholder="Budget" value={budget} onChange={(e) => setBudget(e.target.value)} className={styles.formInput}></textarea>
           <textarea placeholder="Guests" value={guests} onChange={(e) => setGuests(e.target.value)} className={styles.formInput}></textarea>
           <textarea placeholder="Venue" value={venue} onChange={(e) => setVenue(e.target.value)}  className={styles.formInput}></textarea>
@@ -187,12 +200,13 @@ const WeddingNotesPage = (props) => {
           <textarea placeholder="Music" value={music} onChange={(e) => setMusic(e.target.value)} className={styles.formInput}></textarea>
           <textarea placeholder="Photographer" value={photographer} onChange={(e) => setPhotographer(e.target.value)} className={styles.formInput}></textarea>
           <textarea placeholder="Registry" value={registry} onChange={(e) => setRegistry(e.target.value)} className={styles.formInput}></textarea>
-          <button type="submit" className={styles.submitButton}>Create Wedding Note</button>
+          <button type="button" className={styles.submitButton} onClick={() => { window.location.href = '/weddingplan'; }}>Create Wedding Note</button>
         </form>
     <div>
   {weddingNotes.map((note) => (
     <div key={note._id}>
       <p>User ID: {note.userId}</p>
+      <p> Date: {note.date}</p>
       <p>Budget: {note.budget}</p>
       <p>Guests: {note.guests}</p>
       <p>Venue: {note.venue}</p>
@@ -221,18 +235,17 @@ const WeddingNotesPage = (props) => {
   ))}
         </div>
       </div>
-
       <div className={styles.grid}>
         <Link href="/" class="btn btn-warning btn-lg">
-          <h5>Home &rarr;</h5>
+          <h2>Home &rarr;</h2>
         </Link>
 
         <Link href="/weddingplan" class="btn btn-info btn-lg">
-          <h5>Current Plan &rarr;</h5>
+          <h2>Current Plan &rarr;</h2>
         </Link>
 
         <div onClick={handleLogout} style={{ cursor: "pointer" }} class="btn btn-danger btn-lg">
-          <h5>Logout &rarr;</h5>
+          <h2>Logout &rarr;</h2>
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@ const WeddingNotes = new Schema({
         ref: 'User',
         required: true
     },
+    date: String,
     budget: String,
     guests: String,
     venue: String,

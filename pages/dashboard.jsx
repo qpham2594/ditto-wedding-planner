@@ -47,7 +47,7 @@ export default function Dashboard(props) {
               Good luck using half of your brain on wedding planning from now until your wedding day!
               
             </p>
-              <img className={styles.ditto} src="./ditto.png"/>
+              <img className={styles.ditto} src="./ditto.png" alt="pokemon ditto icon"/>
               <p className={styles.description}>
               Status:{" "}
               <code className={styles.code}>
@@ -56,11 +56,11 @@ export default function Dashboard(props) {
           </p>
             <div className={styles.grid}>
               <Link href="/notes" class="btn btn-warning btn-lg">
-                <h5> Start planning! &rarr;</h5>
+                <h2> Start planning! &rarr;</h2>
               </Link>
 
               <Link href="/weddingplan" class="btn btn-info btn-lg">
-                <h5>Current plan &rarr;</h5>
+                <h2>Current plan &rarr;</h2>
               </Link>
 
               <div
@@ -68,7 +68,7 @@ export default function Dashboard(props) {
                 style={{ cursor: "pointer" }}
                 class="btn btn-danger btn-lg"
               >
-                <h5>Logout &rarr;</h5>
+                <h2>Logout &rarr;</h2>
               </div>
             </div>
             </div>

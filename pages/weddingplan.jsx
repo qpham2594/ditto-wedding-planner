@@ -7,7 +7,8 @@ import { withIronSessionSsr } from "iron-session/next";
 import sessionOptions from "../config/session";
 import Header from "../components/header";
 import useLogout from "../hooks/useLogout";
-import { getCityData, getWeatherData } from '../pages/api/weather'; // Import API functions
+import { getCityData, getWeatherData } from '../pages/api/weather';
+import Head from 'next/head'
 
 
 export const getServerSideProps = withIronSessionSsr(
@@ -88,75 +89,99 @@ const WeddingPlan = (props) => {
   };
 
   return (
-    <div>
+    <div className={styles.planningpage}>
+      <Head>
+        <title> View your plan</title>
+        <meta name="description" content="This is your current wedding plan, or plans, and you can update or delete them!" />
+        <html lang="en" />
+      </Head>
       <Header isLoggedIn={props.isLoggedIn} username={props.user.username} />
-
+    <div className={styles.searchWrapper}>
       <div className={styles.searchContainer}>
-        <h1> Check weather of venue: </h1>
-        <input
-          type="text"
-          placeholder="Enter Location (e.g., city, zip code)"
-          value={locationInput}
-          onChange={(e) => setLocationInput(e.target.value)}
-        />
-        <button onClick={handleSearch}>Search</button>
-      </div>
-
-      {weather && (
-        <div>
-              {weather.list[0].weather[0].icon && (
-            <img
-              src={`http://openweathermap.org/img/wn/${weather.list[0].weather[0].icon}.png`}
-              alt="Weather Icon"
-            />
-          )}
-          <p>Temperature: {weather.list[0].main.temp}°F</p>
-          <p>Weather: {weather.list[0].weather[0].description}</p>
-          <p>Feels Like: {weather.list[0].main.feels_like}°F</p>
+        <div> 
+          <h3> Check weather of venue: </h3>
+          <input
+            type="text"
+            placeholder="Enter Location (e.g., city, zip code)"
+            value={locationInput}
+            onChange={(e) => setLocationInput(e.target.value)}
+            className={styles.weatherinput}
+          />
+          <button onClick={handleSearch}>Search</button>
         </div>
-)}
-      <div>
-      <h1> Your budget: </h1>
+
+        {weather && (
+          <div className={styles.weatherResult}>
+                {weather.list[0].weather[0].icon && (
+              <img
+                src={`http://openweathermap.org/img/wn/${weather.list[0].weather[0].icon}.png`}
+                alt="Weather Icon"
+              />
+            )}
+            <p>Temperature: {weather.list[0].main.temp}°F</p>
+            <p>Weather: {weather.list[0].weather[0].description}</p>
+            <p>Feels Like: {weather.list[0].main.feels_like}°F</p>
+          </div>
+            )}
+        </div>
+      <div className={styles.weddingVissions}>
+
         {loading ? (
           <p>Loading...</p>
         ) : (
           weddingNotes.map((note) => (
-            <div key={note._id}>
-              <p>Budget: {note.budget}</p>
-              <p>Guests: {note.guests}</p>
-              <p>Venue: {note.venue}</p>
-              <p>Theme: {note.theme}</p>
-              <p>Caterers: {note.caterers}</p>
-              <p>Alcohol: {note.alcohol}</p>
-              <p>Vendors: {note.vendors}</p>
-              <p>Rentals: {note.rentals}</p>
-              <p>Dress: {note.dress}</p>
-              <p>Suit: {note.suit}</p>
-              <p>Florals: {note.florals}</p>
-              <p>Transportation: {note.transportation}</p>
-              <p>Cake: {note.cake}</p>
-              <p>Invitations: {note.invitations}</p>
-              <p>Decor: {note.decor}</p>
-              <p>Bridesmaids: {note.bridesmaids}</p>
-              <p>Groomsmen: {note.groomsmen}</p>
-              <p>Lodging: {note.lodging}</p>
-              <p>Registry: {note.registry}</p>
-              <button onClick={() => handleUpdateWeddingNote(note._id)}>Update</button>
-              <button onClick={() => handleDeleteWeddingNote(note._id)}>Delete</button>
+            <div key={note._id} className={styles.noteDetailsWrapper}>
+              <p className={styles.noteDetails}>Date of this note: {note.date}</p>
+              <hr class="my-2"/>
+              <p className={styles.noteDetails}>Budget: {note.budget}</p>
+              <hr class="my-2"/>
+              <p className={styles.noteDetails}>Guests: {note.guests}</p>
+              <hr class="my-2"/>
+              <p className={styles.noteDetails}>Venue: {note.venue}</p>
+              <hr class="my-2"/>
+              <p className={styles.noteDetails}>Theme: {note.theme}</p>
+              <hr class="my-2"/>
+              <p className={styles.noteDetails}>Caterers: {note.caterers}</p>
+              <hr class="my-2"/>
+              <p className={styles.noteDetails}>Alcohol: {note.alcohol}</p>
+              <hr class="my-2"/>
+              <p className={styles.noteDetails}>Vendors: {note.vendors}</p>
+              <hr class="my-2"/>
+              <p className={styles.noteDetails}>Rentals: {note.rentals}</p>
+              <hr class="my-2"/>
+              <p className={styles.noteDetails}>Dress: {note.dress}</p>
+              <hr class="my-2"/>
+              <p className={styles.noteDetails}>Suit: {note.suit}</p>
+              <hr class="my-2"/>
+              <p className={styles.noteDetails}>Florals: {note.florals}</p>
+              <hr class="my-2"/>
+              <p className={styles.noteDetails}>Transportation: {note.transportation}</p>
+              <hr class="my-2"/>
+              <p className={styles.noteDetails}>Cake: {note.cake}</p>
+              <p className={styles.noteDetails}>Invitations: {note.invitations}</p>
+              <hr class="my-2"/>
+              <p className={styles.noteDetails}>Decor: {note.decor}</p>
+              <hr class="my-2"/>
+              <p className={styles.noteDetails}>Bridesmaids: {note.bridesmaids}</p>
+              <hr class="my-2"/>
+              <p className={styles.noteDetails}>Groomsmen: {note.groomsmen}</p>
+              <hr class="my-2"/>
+              <p className={styles.noteDetails}>Lodging: {note.lodging}</p>
+              <hr class="my-2"/>
+              <p className={styles.noteDetails}>Registry: {note.registry}</p>
+              <button onClick={() => handleUpdateWeddingNote(note._id)} class="btn btn-success btn-lg">Update</button>
+              <button onClick={() => handleDeleteWeddingNote(note._id)} class="btn btn-info btn-lg">Delete</button>
             </div>
           ))
         )}
       </div>
-
+    </div>
       <div className={styles.grid}>
-        <Link href="/" className={styles.card}>
+        <Link href="/" class="btn btn-warning btn-lg">
           <h2>Home &rarr;</h2>
-          <p>Return to the homepage.</p>
         </Link>
-
-        <div onClick={handleLogout} style={{ cursor: "pointer" }} className={styles.card}>
+        <div onClick={handleLogout} style={{ cursor: "pointer" }} class="btn btn-danger btn-lg">
           <h2>Logout &rarr;</h2>
-          <p>See you later, good job today!</p>
         </div>
       </div>
     </div>

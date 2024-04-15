@@ -54,6 +54,7 @@
   margin: 4rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
+  margin-left: 10px;
 }
 
 .code {
@@ -69,7 +70,6 @@
   display: flex;
   justify-content:left;
   flex-wrap: wrap;
-  margin: 10px;
   gap: 20px;
 }
 
@@ -125,6 +125,18 @@
   margin-left: 0.5rem;
 }
 
+.loginbg{
+  background-image: url(../public/loginbg3.jpg);
+  background-size: cover;
+}
+
+.signupbg{
+  background-image: url(../public/signupbg2.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 10%;
+
+}
 .hero{
   background-image: url(../public/flowers.jpg);
   background-size: cover;
@@ -135,7 +147,8 @@
 .text {
   color: whitesmoke;
   font-weight:500;
-  font-size: 22px
+  font-size: 22px;
+  margin-left: 10px;
 }
 
 .ditto {
@@ -151,8 +164,12 @@
   background-image: url(../public/dashboard2.jpg);
   background-size: cover;
   background-position: center;
+  background-color: darkgreen;
 }
-
+.formTitle{
+  text-align: center;
+  margin-bottom: 25px;
+}
 .planForm {
   display: flex;
   flex-wrap: wrap;
@@ -167,17 +184,83 @@
   border-radius: 8px;
   box-sizing: border-box;
   padding: 10px;
-  margin-bottom: 20px; /* Add margin at the bottom of each input */
+  margin-bottom: 20px; 
 }
 
 .formInput:focus {
-  outline: none; /* Remove outline when focused */
-  border-color: dodgerblue; /* Change border color when focused */
+  outline: none; 
+  border-color: yellow; 
 }
 
 .submitButton{
-  flex-basis: 100%; /* Make the button take up full width */
-  margin-top: 20px; /* Add margin above the button */
+  flex-basis: 100%; 
+  margin-top: 20px; 
+  border-radius: 6px;
+  padding: 10px;
+  background-color: plum;
+  font-weight: bolder;
+  color: black;
+  border: solid whitesmoke 2px;
+}
+
+.notesbackground {
+  background-color: blue;
+  background-image: url(../public/notesbg.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.planningpage{
+  background-image: url(../public/weddingplan2.jpg);
+  background-size: cover;
+  background-color: yellow;
+}
+
+.searchContainer {
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content:center;
+  background-color: rgb(127, 70, 127);
+  border-top: solid whitesmoke 2px;
+  border-bottom: solid whitesmoke 2px;;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.weatherinput{
+  padding: 10px;
+  margin-right: 10px;
+
+}
+.weatherResult{
+  background-color: rgb(127, 70, 127);
+  margin-left: 20%;
+}
+
+.weddingVissions {
+  display: flex;
+  flex-wrap: wrap; 
+}
+
+.noteDetailsWrapper{
+  width: calc(50% - 20px); /* Set the width to 50% of the container with some margin */
+  margin: 10px;
+  background-color: rgb(60, 33, 60);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  max-width: 400px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.updateBackground{
+  background-color: blue;
+  background-image: url(../public/updatebackground5.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 @media (max-width: 600px) {
@@ -199,3 +282,18 @@
     filter: invert(1);
   }
 } 
+
+.ditto {
+  width:30%;
+  height: auto;
+  margin-left: 40%;
+  position: sticky;
+}
+
+.formInput {
+  font-size: 14px;
+}
+
+.noteDetailsWrapper {
+  width: calc(100% - 20px);
+}

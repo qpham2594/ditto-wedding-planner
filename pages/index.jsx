@@ -56,24 +56,24 @@ export default function Home(props) {
           {props.isLoggedIn ? (
             <>
               <Link href="/dashboard" class="btn btn-warning btn-lg">
-                <h5>Dashboard &rarr;</h5>
+                <h2>Dashboard &rarr;</h2>
               </Link>
               <div
                 onClick={logout}
                 style={{ cursor: "pointer" }}
                 class="btn btn-danger btn-lg"
               >
-                <h5>Logout &rarr;</h5>
+                <h2>Logout &rarr;</h2>
               </div>
             </>
           ) : (
             <>
               <Link href="/login" class="btn btn-warning btn-lg">
-                <h5> Login &rarr;</h5>
+                <h2> Login &rarr;</h2>
               </Link>
 
               <Link href="/signup" class="btn btn-warning btn-lg">
-                <h5> Sign Up &rarr;</h5>
+                <h2> Sign Up &rarr;</h2>
               </Link>
             </>
           )}
