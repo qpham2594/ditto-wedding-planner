@@ -68,8 +68,8 @@ const WeddingNotesPage = (props) => {
   };
 
   // New wedding note function
-  const handleCreateWeddingNote = async () => {
-
+  const handleCreateWeddingNote = async (e) => {
+    e.preventDefault();
     const { user } = props; // Destructure the user object from props
     const { _id: userId } = user; // Extract the userID from the user object because we need userId for CRUD
 
@@ -98,7 +98,9 @@ const WeddingNotesPage = (props) => {
         registry,
         music,
         photographer});
+
       await fetchWeddingNotes();
+
       setDate('');
       setBudget('');
       setGuests('');
@@ -124,38 +126,11 @@ const WeddingNotesPage = (props) => {
 
       alert('Wedding note has been created!');
 
-      router.push({
-        pathname: '/weddingplan',
-        query: { created: true,
-        userId,
-        date,
-        budget,
-        guests,
-        venue,
-        theme,
-        caterers,
-        alcohol,
-        vendors,
-        rentals,
-        dress,
-        suit,
-        florals,
-        transportation,
-        cake,
-        invitations,
-        decor,
-        bridesmaids,
-        groomsmen,
-        lodging,
-        registry,
-        music,
-        photographer
-        }
-      })
-    } catch (error) {
-      console.error('Error creating wedding note:', error);
-    }
-  };
+    router.push('/weddingplan');
+      } catch (error) {
+        console.error('Error creating wedding note:', error);
+      }
+    };
 
   useEffect(() => {
     fetchWeddingNotes();
