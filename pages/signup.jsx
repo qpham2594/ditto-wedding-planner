@@ -60,13 +60,6 @@ export default function Signup(props) {
           Please sign up to get access!
         </h1>
 
-        <p className={styles.description}>
-          Status:{" "}
-          <code className={styles.code}>
-            {!props.isLoggedIn && " Not"} Logged In
-          </code>
-        </p>
-
         <form
           className={[styles.card, styles.form].join(" ")}
           onSubmit={handleCreateAccount}

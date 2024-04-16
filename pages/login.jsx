@@ -67,14 +67,6 @@ export default function Login(props) {
           You should log in!
         </h1>
 
-        <p className={styles.description}>
-          <br />
-          Status:{" "}
-          <code className={styles.code}>
-            {!props.isLoggedIn && " Not"} Logged In
-          </code>
-        </p>
-
         <form
           className={[styles.card, styles.form].join(" ")}
           onSubmit={handleLogin}
