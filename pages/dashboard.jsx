@@ -44,8 +44,7 @@ export default function Dashboard(props) {
               Let's make a plan and start jotting down the vision. <br/>
               Start putting down whatever you have in mind if budget wasn't a thing. <br/>
               Then, make the changes as you go through the timeline. <br/>
-              Good luck using half of your brain on wedding planning from now until your wedding day!
-              
+              Good luck using half of your brain on wedding planning from now until your wedding day!              
             </p>
               <img className={styles.ditto} src="./ditto.png" alt="pokemon ditto icon"/>
             <div className={styles.grid}>

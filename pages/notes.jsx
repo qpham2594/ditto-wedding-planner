@@ -229,9 +229,6 @@ const WeddingNotesPage = (props) => {
       <p>Music: {note.music}</p>
       <p>Photographer: {note.photographer}</p>
       <p>Registry: {note.registry}</p>
-
-      <button onClick={() => handleUpdateWeddingNote(note._id)}>Update</button>
-      <button onClick={() => handleDeleteWeddingNote(note._id)}>Delete</button>
     </div>
   ))}
         </div>
