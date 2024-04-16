@@ -211,7 +211,7 @@ const router = useRouter();
         className={styles.formInput}
       />
 
-      <button type="submit" className={styles.submitButton} onClick={() => { window.location.href = '/weddingplan'; }}>Save Changes</button>
+      <button type="submit" className={styles.submitButton}>Save Changes</button>
     </div>
   )} 
 </form>

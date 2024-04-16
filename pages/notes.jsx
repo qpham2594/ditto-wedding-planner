@@ -200,7 +200,7 @@ const WeddingNotesPage = (props) => {
           <textarea placeholder="Music" value={music} onChange={(e) => setMusic(e.target.value)} className={styles.formInput}></textarea>
           <textarea placeholder="Photographer" value={photographer} onChange={(e) => setPhotographer(e.target.value)} className={styles.formInput}></textarea>
           <textarea placeholder="Registry" value={registry} onChange={(e) => setRegistry(e.target.value)} className={styles.formInput}></textarea>
-          <button type="submit" className={styles.submitButton} onClick={() => { window.location.href = '/weddingplan'; }}>Create Wedding Note</button>
+          <button type="submit" className={styles.submitButton}>Create Wedding Note</button>
         </form>
     <div>
   {weddingNotes.map((note) => (
