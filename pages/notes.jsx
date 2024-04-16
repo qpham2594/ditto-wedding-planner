@@ -171,7 +171,6 @@ const WeddingNotesPage = (props) => {
       <Head>
         <title> Create your vision!!</title>
         <meta name="description" content="create your wedding vision and fill out the fields!" />
-        <html lang="en" />
       </Head>
       <Header isLoggedIn={props.isLoggedIn} username={props.user.username} />
 

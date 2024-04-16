@@ -8,7 +8,7 @@ import sessionOptions from "../config/session";
 import Header from "../components/header";
 import useLogout from "../hooks/useLogout";
 import { getCityData, getWeatherData } from '../pages/api/weather';
-//import Head from 'next/head'
+import Head from 'next/head'
 
 
 export const getServerSideProps = withIronSessionSsr(
@@ -90,6 +90,10 @@ const WeddingPlan = (props) => {
 
   return (
     <div className={styles.planningpage}>
+      <Head>
+        <title> View your plan</title>
+        <meta name="description" content="This is your current wedding plan, or plans, and you can update or delete them!" />
+      </Head>
       <Header isLoggedIn={props.isLoggedIn} username={props.user.username} />
     <div className={styles.searchWrapper}>
       <div className={styles.searchContainer}>

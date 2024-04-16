@@ -70,7 +70,6 @@ const router = useRouter();
       <Head>
         <title> Update your plan</title>
         <meta name="description" content="Need to make changes to your plan? Go ahead!" />
-        <html lang="en" />
       </Head>
       <Header isLoggedIn={props.isLoggedIn} username={props.user.username} />
       <h1 className={styles.formTitle}>Update Wedding Note</h1>
