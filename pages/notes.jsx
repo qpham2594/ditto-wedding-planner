@@ -36,24 +36,13 @@ const WeddingNotesPage = (props) => {
   const [budget, setBudget] = useState('');
   const [guests, setGuests] = useState('');
   const [venue, setVenue] = useState('');
-  const [theme, setTheme] = useState('');
   const [caterers, setCaterers] = useState('');
-  const [alcohol, setAlcohol] = useState('');
-  const [vendors, setVendors] = useState('');
-  const [rentals, setRentals] = useState('');
-  const [dress, setDress] = useState('');
-  const [suit, setSuit] = useState('');
-  const [florals, setFlorals] = useState('');
-  const [transportation, setTransportation] = useState('');
+  const [clothing, setClothing] = useState('');
   const [cake, setCake] = useState('');
-  const [invitations, setInvitations] = useState('');
-  const [decor, setDecor] = useState('');
-  const [bridesmaids, setBridesmaids] = useState('');
-  const [groomsmen, setGroomsmen] = useState('');
+  const [bridalparty, setBridalparty] = useState('');
   const [lodging, setLodging] = useState('');
   const [registry, setRegistry] = useState('');
-  const [music, setMusic] = useState('');
-  const [photographer, setPhotographer] = useState('');
+  const [expenses, setExpenses] = useState('');
   const [weddingNotes, setWeddingNotes] = useState([]);
 
   // Fetch data from the backend API
@@ -70,6 +59,11 @@ const WeddingNotesPage = (props) => {
   // New wedding note function
   const handleCreateWeddingNote = async (e) => {
     e.preventDefault();
+    if (hasNote) {
+      alert('You have already created a wedding note!');
+      router.push('/weddingplan');
+      return;
+    }
     const { user } = props; // Destructure the user object from props
     const { _id: userId } = user; // Extract the userID from the user object because we need userId for CRUD
 
@@ -80,24 +74,14 @@ const WeddingNotesPage = (props) => {
         budget,
         guests,
         venue,
-        theme,
         caterers,
-        alcohol,
-        vendors,
-        rentals,
-        dress,
-        suit,
-        florals,
-        transportation,
+        clothing,
         cake,
-        invitations,
-        decor,
-        bridesmaids,
-        groomsmen,
+        bridalparty,
         lodging,
         registry,
-        music,
-        photographer});
+        expenses
+      });
 
       await fetchWeddingNotes();
 
@@ -105,24 +89,13 @@ const WeddingNotesPage = (props) => {
       setBudget('');
       setGuests('');
       setVenue('');
-      setTheme('');
       setCaterers('');
-      setAlcohol('');
-      setVendors('');
-      setRentals('');
-      setDress('');
-      setSuit('');
-      setFlorals('');
-      setTransportation('');
+      setClothing('');
       setCake('');
-      setInvitations('');
-      setDecor('');
-      setBridesmaids('');
-      setGroomsmen('');
+      setBridalparty('');
       setLodging('');
       setRegistry('');
-      setMusic('');
-      setPhotographer ('')
+      setExpenses('');
 
       alert('Wedding note has been created!');
 
@@ -158,24 +131,13 @@ const WeddingNotesPage = (props) => {
         <input type="text" placeholder="Budget" value={budget} onChange={(e) => setBudget(e.target.value)} className={styles.formInput} />
         <input type="text" placeholder="Guests" value={guests} onChange={(e) => setGuests(e.target.value)} className={styles.formInput} />
         <input type="text" placeholder="Venue" value={venue} onChange={(e) => setVenue(e.target.value)} className={styles.formInput} />
-        <input type="text" placeholder="Theme" value={theme} onChange={(e) => setTheme(e.target.value)} className={styles.formInput} />
         <input type="text" placeholder="Caterers" value={caterers} onChange={(e) => setCaterers(e.target.value)} className={styles.formInput} />
-        <input type="text" placeholder="Alcohol" value={alcohol} onChange={(e) => setAlcohol(e.target.value)} className={styles.formInput} />
-        <input type="text" placeholder="Vendors" value={vendors} onChange={(e) => setVendors(e.target.value)} className={styles.formInput} />
-        <input type="text" placeholder="Rentals" value={rentals} onChange={(e) => setRentals(e.target.value)} className={styles.formInput} />
-        <input type="text" placeholder="Dress" value={dress} onChange={(e) => setDress(e.target.value)} className={styles.formInput} />
-        <input type="text" placeholder="Suit" value={suit} onChange={(e) => setSuit(e.target.value)} className={styles.formInput} />
-        <input type="text" placeholder="Florals" value={florals} onChange={(e) => setFlorals(e.target.value)} className={styles.formInput} />
-        <input type="text" placeholder="Transportation" value={transportation} onChange={(e) => setTransportation(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Clothing" value={clothing} onChange={(e) => setClothing(e.target.value)} className={styles.formInput} />
         <input type="text" placeholder="Cake" value={cake} onChange={(e) => setCake(e.target.value)} className={styles.formInput} />
-        <input type="text" placeholder="Invitations" value={invitations} onChange={(e) => setInvitations(e.target.value)} className={styles.formInput} />
-        <input type="text" placeholder="Decor" value={decor} onChange={(e) => setDecor(e.target.value)} className={styles.formInput} />
-        <input type="text" placeholder="Bridesmaids" value={bridesmaids} onChange={(e) => setBridesmaids(e.target.value)} className={styles.formInput} />
-        <input type="text" placeholder="Groomsmen" value={groomsmen} onChange={(e) => setGroomsmen(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Bridesmaids and Groomsmen" value={bridalparty} onChange={(e) => setBridalparty(e.target.value)} className={styles.formInput} />
         <input type="text" placeholder="Lodging" value={lodging} onChange={(e) => setLodging(e.target.value)} className={styles.formInput} />
-        <input type="text" placeholder="Music" value={music} onChange={(e) => setMusic(e.target.value)} className={styles.formInput} />
-        <input type="text" placeholder="Photographer" value={photographer} onChange={(e) => setPhotographer(e.target.value)} className={styles.formInput} />
         <input type="text" placeholder="Registry" value={registry} onChange={(e) => setRegistry(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Other expenses" value={expenses} onChange={(e) => setExpenses(e.target.value)} className={styles.formInput} />
         <button type="submit" className={styles.submitButton}>Create Wedding Note</button>
   </form>
     <div>
@@ -185,24 +147,13 @@ const WeddingNotesPage = (props) => {
       <p>Budget: {note.budget}</p>
       <p>Guests: {note.guests}</p>
       <p>Venue: {note.venue}</p>
-      <p>Theme: {note.theme}</p>
       <p>Caterers: {note.caterers}</p>
-      <p>Alcohol: {note.alcohol}</p>
-      <p>Vendors: {note.vendors}</p>
-      <p>Rentals: {note.rentals}</p>
-      <p>Dress: {note.dress}</p>
-      <p>Suit: {note.suit}</p>
-      <p>Florals: {note.florals}</p>
-      <p>Transportation: {note.transportation}</p>
+      <p>Clothing: {note.clothing}</p>
       <p>Cake: {note.cake}</p>
-      <p>Invitations: {note.invitations}</p>
-      <p>Decor: {note.decor}</p>
-      <p>Bridesmaids: {note.bridesmaids}</p>
-      <p>Groomsmen: {note.groomsmen}</p>
+      <p>Bridesmaids and Groomsmen: {note.bridalparty}</p>
       <p>Lodging: {note.lodging}</p>
-      <p>Music: {note.music}</p>
-      <p>Photographer: {note.photographer}</p>
       <p>Registry: {note.registry}</p>
+      <p>Other expenses: {note.expenses}</p>
     </div>
   ))}
         </div>

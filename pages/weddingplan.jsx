@@ -131,7 +131,7 @@ const WeddingPlan = (props) => {
         ) : (
           weddingNotes.map((note) => (
             <div key={note._id} className={styles.noteDetailsWrapper}>
-              <p className={styles.noteDetails}>Date of this note: {note.date}</p>
+              <p className={styles.noteDetails}>Date of wedding: {note.date}</p>
               <hr class="my-2"/>
               <p className={styles.noteDetails}>Budget: {note.budget}</p>
               <hr class="my-2"/>
@@ -139,37 +139,19 @@ const WeddingPlan = (props) => {
               <hr class="my-2"/>
               <p className={styles.noteDetails}>Venue: {note.venue}</p>
               <hr class="my-2"/>
-              <p className={styles.noteDetails}>Theme: {note.theme}</p>
-              <hr class="my-2"/>
               <p className={styles.noteDetails}>Caterers: {note.caterers}</p>
               <hr class="my-2"/>
-              <p className={styles.noteDetails}>Alcohol: {note.alcohol}</p>
-              <hr class="my-2"/>
-              <p className={styles.noteDetails}>Vendors: {note.vendors}</p>
-              <hr class="my-2"/>
-              <p className={styles.noteDetails}>Rentals: {note.rentals}</p>
-              <hr class="my-2"/>
-              <p className={styles.noteDetails}>Dress: {note.dress}</p>
-              <hr class="my-2"/>
-              <p className={styles.noteDetails}>Suit: {note.suit}</p>
-              <hr class="my-2"/>
-              <p className={styles.noteDetails}>Florals: {note.florals}</p>
-              <hr class="my-2"/>
-              <p className={styles.noteDetails}>Transportation: {note.transportation}</p>
+              <p className={styles.noteDetails}>Clothing: {note.clothing}</p>
               <hr class="my-2"/>
               <p className={styles.noteDetails}>Cake: {note.cake}</p>
               <hr class="my-2"/>
-              <p className={styles.noteDetails}>Invitations: {note.invitations}</p>
-              <hr class="my-2"/>
-              <p className={styles.noteDetails}>Decor: {note.decor}</p>
-              <hr class="my-2"/>
-              <p className={styles.noteDetails}>Bridesmaids: {note.bridesmaids}</p>
-              <hr class="my-2"/>
-              <p className={styles.noteDetails}>Groomsmen: {note.groomsmen}</p>
+              <p className={styles.noteDetails}>Bridesmaids: {note.bridalparty}</p>
               <hr class="my-2"/>
               <p className={styles.noteDetails}>Lodging: {note.lodging}</p>
               <hr class="my-2"/>
               <p className={styles.noteDetails}>Registry: {note.registry}</p>
+              <hr class="my-2"/>
+              <p className={styles.noteDetails}>Other expenses: {note.expenses}</p>
               <button onClick={() => handleUpdateWeddingNote(note._id)} class="btn btn-success btn-lg mb-2">Update</button>
               <button onClick={() => handleDeleteWeddingNote(note._id)} class="btn btn-info btn-lg mt-2">Delete</button>
             </div>

@@ -30,7 +30,7 @@ const UpdateNotePage = (props) => {
 const router = useRouter();
   const logout = useLogout();
   const { id } = router.query;
-  const [note, setNote] = useState({}); // State to store the note data
+  const [note, setNote] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -108,13 +108,6 @@ const router = useRouter();
       />
       <input
         type="text"
-        placeholder="Theme"
-        value={note.theme || ''}
-        onChange={(e) => setNote({ ...note, theme: e.target.value })}
-        className={styles.formInput}
-      />
-      <input
-        type="text"
         placeholder="Caterers"
         value={note.caterers || ''}
         onChange={(e) => setNote({ ...note, caterers: e.target.value })}
@@ -122,51 +115,9 @@ const router = useRouter();
       />
       <input
         type="text"
-        placeholder="Alcohol"
-        value={note.alcohol || ''}
-        onChange={(e) => setNote({ ...note, alcohol: e.target.value })}
-        className={styles.formInput}
-      />
-      <input
-        type="text"
-        placeholder="Vendors"
-        value={note.vendors || ''}
-        onChange={(e) => setNote({ ...note, vendors: e.target.value })}
-        className={styles.formInput}
-      />
-      <input
-        type="text"
-        placeholder="Rentals"
-        value={note.rentals || ''}
-        onChange={(e) => setNote({ ...note, rentals: e.target.value })}
-        className={styles.formInput}
-      />
-      <input
-        type="text"
-        placeholder="Dress"
-        value={note.dress || ''}
-        onChange={(e) => setNote({ ...note, dress: e.target.value })}
-        className={styles.formInput}
-      />
-      <input
-        type="text"
-        placeholder="Suit"
-        value={note.suit || ''}
-        onChange={(e) => setNote({ ...note, suit: e.target.value })}
-        className={styles.formInput}
-      />
-      <input
-        type="text"
-        placeholder="Florals"
-        value={note.florals || ''}
-        onChange={(e) => setNote({ ...note, florals: e.target.value })}
-        className={styles.formInput}
-      />
-      <input
-        type="text"
-        placeholder="Transportation"
-        value={note.transportation || ''}
-        onChange={(e) => setNote({ ...note, transportation: e.target.value })}
+        placeholder="Clothing"
+        value={note.clothing || ''}
+        onChange={(e) => setNote({ ...note, clothing: e.target.value })}
         className={styles.formInput}
       />
       <input
@@ -178,30 +129,9 @@ const router = useRouter();
       />
       <input
         type="text"
-        placeholder="Invitations"
-        value={note.invitations || ''}
-        onChange={(e) => setNote({ ...note, invitations: e.target.value })}
-        className={styles.formInput}
-      />
-      <input
-        type="text"
-        placeholder="Decor"
-        value={note.decor || ''}
-        onChange={(e) => setNote({ ...note, decor: e.target.value })}
-        className={styles.formInput}
-      />
-      <input
-        type="text"
-        placeholder="Bridesmaids"
-        value={note.bridesmaids || ''}
-        onChange={(e) => setNote({ ...note, bridesmaids: e.target.value })}
-        className={styles.formInput}
-      />
-      <input
-        type="text"
-        placeholder="Groomsmen"
-        value={note.groomsmen || ''}
-        onChange={(e) => setNote({ ...note, groomsmen: e.target.value })}
+        placeholder="Bridesmaids and Groomsmen"
+        value={note.bridalparty || ''}
+        onChange={(e) => setNote({ ...note, bridalparty: e.target.value })}
         className={styles.formInput}
       />
       <input
@@ -216,6 +146,13 @@ const router = useRouter();
         placeholder="Registry"
         value={note.registry || ''}
         onChange={(e) => setNote({ ...note, registry: e.target.value })}
+        className={styles.formInput}
+      />
+      <input
+        type="text"
+        placeholder="Expenses"
+        value={note.expenses || ''}
+        onChange={(e) => setNote({ ...note, expenses: e.target.value })}
         className={styles.formInput}
       />
 

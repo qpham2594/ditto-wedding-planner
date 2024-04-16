@@ -214,6 +214,7 @@
   background-image: url(../public/weddingplan2.jpg);
   background-size: cover;
   background-color: yellow;
+  background-position: center;
 }
 
 .searchContainer {
