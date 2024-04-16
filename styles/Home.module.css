@@ -251,7 +251,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: left;
-  max-width: 400px;
   padding: 15px;
   border-radius: 8px;
 }

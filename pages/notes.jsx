@@ -177,32 +177,32 @@ const WeddingNotesPage = (props) => {
       <main>
   
       <div>
-        <h1 className={styles.formTitle}>Create Your Wedding Vision</h1>
-        <form onSubmit={handleCreateWeddingNote} className={styles.planForm}>
-          <textarea placeholder="Date" value={date} onChange={(e) => setDate(e.target.value)} className={styles.formInput}></textarea>
-          <textarea placeholder="Budget" value={budget} onChange={(e) => setBudget(e.target.value)} className={styles.formInput}></textarea>
-          <textarea placeholder="Guests" value={guests} onChange={(e) => setGuests(e.target.value)} className={styles.formInput}></textarea>
-          <textarea placeholder="Venue" value={venue} onChange={(e) => setVenue(e.target.value)}  className={styles.formInput}></textarea>
-          <textarea placeholder="Theme" value={theme} onChange={(e) => setTheme(e.target.value)} className={styles.formInput}></textarea>
-          <textarea placeholder="Caterers" value={caterers} onChange={(e) => setCaterers(e.target.value)} className={styles.formInput}></textarea>
-          <textarea placeholder="Alcohol" value={alcohol} onChange={(e) => setAlcohol(e.target.value)} className={styles.formInput}></textarea>
-          <textarea placeholder="Vendors" value={vendors} onChange={(e) => setVendors(e.target.value)} className={styles.formInput}></textarea>
-          <textarea placeholder="Rentals" value={rentals} onChange={(e) => setRentals(e.target.value)} className={styles.formInput}></textarea>
-          <textarea placeholder="Dress" value={dress} onChange={(e) => setDress(e.target.value)} className={styles.formInput}></textarea>
-          <textarea placeholder="Suit" value={suit} onChange={(e) => setSuit(e.target.value)} className={styles.formInput}></textarea>
-          <textarea placeholder="Florals" value={florals} onChange={(e) => setFlorals(e.target.value)} className={styles.formInput}></textarea>
-          <textarea placeholder="Transportation" value={transportation} onChange={(e) => setTransportation(e.target.value)} className={styles.formInput}></textarea>
-          <textarea placeholder="Cake" value={cake} onChange={(e) => setCake(e.target.value)} className={styles.formInput}></textarea>
-          <textarea placeholder="Invitations" value={invitations} onChange={(e) => setInvitations(e.target.value)} className={styles.formInput}></textarea>
-          <textarea placeholder="Decor" value={decor} onChange={(e) => setDecor(e.target.value)} className={styles.formInput}></textarea>
-          <textarea placeholder="Bridesmaids" value={bridesmaids} onChange={(e) => setBridesmaids(e.target.value)} className={styles.formInput}></textarea>
-          <textarea placeholder="Groomsmen" value={groomsmen} onChange={(e) => setGroomsmen(e.target.value)} className={styles.formInput}></textarea>
-          <textarea placeholder="Lodging" value={lodging} onChange={(e) => setLodging(e.target.value)} className={styles.formInput}></textarea>
-          <textarea placeholder="Music" value={music} onChange={(e) => setMusic(e.target.value)} className={styles.formInput}></textarea>
-          <textarea placeholder="Photographer" value={photographer} onChange={(e) => setPhotographer(e.target.value)} className={styles.formInput}></textarea>
-          <textarea placeholder="Registry" value={registry} onChange={(e) => setRegistry(e.target.value)} className={styles.formInput}></textarea>
-          <button type="submit" className={styles.submitButton} onClick={handleCreateWeddingNote}>Create Wedding Note</button>
-        </form>
+      <h1 className={styles.formTitle}>Create Your Wedding Vision</h1>
+      <form onSubmit={handleCreateWeddingNote} className={styles.planForm}>
+        <input type="text" placeholder="Date" value={date} onChange={(e) => setDate(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Budget" value={budget} onChange={(e) => setBudget(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Guests" value={guests} onChange={(e) => setGuests(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Venue" value={venue} onChange={(e) => setVenue(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Theme" value={theme} onChange={(e) => setTheme(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Caterers" value={caterers} onChange={(e) => setCaterers(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Alcohol" value={alcohol} onChange={(e) => setAlcohol(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Vendors" value={vendors} onChange={(e) => setVendors(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Rentals" value={rentals} onChange={(e) => setRentals(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Dress" value={dress} onChange={(e) => setDress(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Suit" value={suit} onChange={(e) => setSuit(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Florals" value={florals} onChange={(e) => setFlorals(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Transportation" value={transportation} onChange={(e) => setTransportation(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Cake" value={cake} onChange={(e) => setCake(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Invitations" value={invitations} onChange={(e) => setInvitations(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Decor" value={decor} onChange={(e) => setDecor(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Bridesmaids" value={bridesmaids} onChange={(e) => setBridesmaids(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Groomsmen" value={groomsmen} onChange={(e) => setGroomsmen(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Lodging" value={lodging} onChange={(e) => setLodging(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Music" value={music} onChange={(e) => setMusic(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Photographer" value={photographer} onChange={(e) => setPhotographer(e.target.value)} className={styles.formInput} />
+        <input type="text" placeholder="Registry" value={registry} onChange={(e) => setRegistry(e.target.value)} className={styles.formInput} />
+        <button type="submit" className={styles.submitButton}>Create Wedding Note</button>
+  </form>
     <div>
   {weddingNotes.map((note) => (
     <div key={note._id}>
