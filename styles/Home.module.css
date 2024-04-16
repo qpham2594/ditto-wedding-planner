@@ -126,12 +126,12 @@
 }
 
 .loginbg{
-  /*background-image: url(../public/loginbg3.jpg);*/
+  background-image: url(../public/loginbg3.jpg);
   background-size: cover;
 }
 
 .signupbg{
-  /*background-image: url(../public/signupbg2.jpg);*/
+  background-image: url(../public/signupbg2.jpg);
   background-size: cover;
   background-position: center;
   padding: 10%;
@@ -161,7 +161,7 @@
 }
 
 .dashboardHero{
-  /*background-image: url(../public/dashboard2.jpg);*/
+  background-image: url(../public/dashboard2.jpg);
   background-size: cover;
   background-position: center;
   background-color: darkgreen;
@@ -205,15 +205,15 @@
 
 .notesbackground {
   background-color: rgb(37, 37, 46);
-  /*background-image: url(../public/notesbg.jpg);*/
+  background-image: url(../public/notesbg.jpg);
   background-size: cover;
   background-position: center;
 }
 
 .planningpage{
-  /*background-image: url(../public/weddingplan2.jpg);*/
+  background-image: url(../public/weddingplan2.jpg);
   background-size: cover;
-  background-color: rgb(42, 42, 0);
+  background-color: yellow;
 }
 
 .searchContainer {
