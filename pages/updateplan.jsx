@@ -78,6 +78,13 @@ const router = useRouter();
       <form onSubmit={handleUpdate}>
   {note && (
     <div className={styles.planForm}>
+        <input
+        type="text"
+        placeholder="Date"
+        value={note.date}
+        onChange={(e) => setDate({ ...note, budget: e.target.value })}
+        className={styles.formInput}
+      />
       <input
         type="text"
         placeholder="Budget"

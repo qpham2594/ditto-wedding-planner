@@ -158,6 +158,7 @@ const WeddingPlan = (props) => {
               <p className={styles.noteDetails}>Transportation: {note.transportation}</p>
               <hr class="my-2"/>
               <p className={styles.noteDetails}>Cake: {note.cake}</p>
+              <hr class="my-2"/>
               <p className={styles.noteDetails}>Invitations: {note.invitations}</p>
               <hr class="my-2"/>
               <p className={styles.noteDetails}>Decor: {note.decor}</p>
