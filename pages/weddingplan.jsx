@@ -95,6 +95,7 @@ const WeddingPlan = (props) => {
         <meta name="description" content="This is your current wedding plan, or plans, and you can update or delete them!" />
       </Head>
       <Header isLoggedIn={props.isLoggedIn} username={props.user.username} />
+    <main>
     <div className={styles.searchWrapper}>
       <div className={styles.searchContainer}>
         <div> 
@@ -183,6 +184,7 @@ const WeddingPlan = (props) => {
           <h2>Logout &rarr;</h2>
         </div>
       </div>
+      </main>
     </div>
   );
 };

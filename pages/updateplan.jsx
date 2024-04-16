@@ -72,6 +72,8 @@ const router = useRouter();
         <meta name="description" content="Need to make changes to your plan? Go ahead!" />
       </Head>
       <Header isLoggedIn={props.isLoggedIn} username={props.user.username} />
+
+    <main>
       <h1 className={styles.formTitle}>Update Wedding Note</h1>
       <form onSubmit={handleUpdate}>
   {note && (
@@ -224,6 +226,7 @@ const router = useRouter();
           <h2>Logout &rarr;</h2>
         </div>
       </div>
+      </main>
     </div>
   );
 };

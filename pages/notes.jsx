@@ -174,6 +174,8 @@ const WeddingNotesPage = (props) => {
       </Head>
       <Header isLoggedIn={props.isLoggedIn} username={props.user.username} />
 
+      <main>
+  
       <div>
         <h1 className={styles.formTitle}>Create Your Wedding Vision</h1>
         <form onSubmit={handleCreateWeddingNote} className={styles.planForm}>
@@ -247,6 +249,7 @@ const WeddingNotesPage = (props) => {
           <h2>Logout &rarr;</h2>
         </div>
       </div>
+      </main>
     </div>
   );
 };
