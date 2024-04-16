@@ -82,7 +82,7 @@ const router = useRouter();
         type="text"
         placeholder="Date"
         value={note.date}
-        onChange={(e) => setDate({ ...note, budget: e.target.value })}
+        onChange={(e) => setNote({ ...note, budget: e.target.value })}
         className={styles.formInput}
       />
       <input
